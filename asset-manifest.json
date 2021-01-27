@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/Dream-House/static/js/main.31821f73.chunk.js",
-    "main.js.map": "/Dream-House/static/js/main.31821f73.chunk.js.map",
+    "main.js": "/Dream-House/static/js/main.ac505810.chunk.js",
+    "main.js.map": "/Dream-House/static/js/main.ac505810.chunk.js.map",
     "runtime-main.js": "/Dream-House/static/js/runtime-main.809f7466.js",
     "runtime-main.js.map": "/Dream-House/static/js/runtime-main.809f7466.js.map",
     "static/css/2.b57b7cfd.chunk.css": "/Dream-House/static/css/2.b57b7cfd.chunk.css",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.809f7466.js",
     "static/css/2.b57b7cfd.chunk.css",
     "static/js/2.921e2a9d.chunk.js",
-    "static/js/main.31821f73.chunk.js"
+    "static/js/main.ac505810.chunk.js"
   ]
 }
