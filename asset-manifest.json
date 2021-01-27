@@ -1,17 +1,23 @@
 {
   "files": {
-    "main.js": "/Dream-House/static/js/main.ee73290d.chunk.js",
-    "main.js.map": "/Dream-House/static/js/main.ee73290d.chunk.js.map",
+    "main.js": "/Dream-House/static/js/main.31821f73.chunk.js",
+    "main.js.map": "/Dream-House/static/js/main.31821f73.chunk.js.map",
     "runtime-main.js": "/Dream-House/static/js/runtime-main.809f7466.js",
     "runtime-main.js.map": "/Dream-House/static/js/runtime-main.809f7466.js.map",
-    "static/js/2.7420d859.chunk.js": "/Dream-House/static/js/2.7420d859.chunk.js",
-    "static/js/2.7420d859.chunk.js.map": "/Dream-House/static/js/2.7420d859.chunk.js.map",
+    "static/css/2.b57b7cfd.chunk.css": "/Dream-House/static/css/2.b57b7cfd.chunk.css",
+    "static/js/2.921e2a9d.chunk.js": "/Dream-House/static/js/2.921e2a9d.chunk.js",
+    "static/js/2.921e2a9d.chunk.js.map": "/Dream-House/static/js/2.921e2a9d.chunk.js.map",
     "index.html": "/Dream-House/index.html",
-    "static/js/2.7420d859.chunk.js.LICENSE.txt": "/Dream-House/static/js/2.7420d859.chunk.js.LICENSE.txt"
+    "static/css/2.b57b7cfd.chunk.css.map": "/Dream-House/static/css/2.b57b7cfd.chunk.css.map",
+    "static/js/2.921e2a9d.chunk.js.LICENSE.txt": "/Dream-House/static/js/2.921e2a9d.chunk.js.LICENSE.txt",
+    "static/media/villa100.3457528d.jpg": "/Dream-House/static/media/villa100.3457528d.jpg",
+    "static/media/villa200.9928d1ec.jpg": "/Dream-House/static/media/villa200.9928d1ec.jpg",
+    "static/media/villa300.c4817440.jpg": "/Dream-House/static/media/villa300.c4817440.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.809f7466.js",
-    "static/js/2.7420d859.chunk.js",
-    "static/js/main.ee73290d.chunk.js"
+    "static/css/2.b57b7cfd.chunk.css",
+    "static/js/2.921e2a9d.chunk.js",
+    "static/js/main.31821f73.chunk.js"
   ]
 }
