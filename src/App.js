@@ -1,13 +1,14 @@
 import React,{useState,useEffect} from 'react';
 import { commerce} from './lib/commerce';
-import {Products,Navbar,Cart,Checkout } from './components';
+import {Products,Navbar,Cart,Checkout,Details,Footer } from './components';
 import { HashRouter as Router, Switch, Route } from 'react-router-dom';
+
 import { CssBaseline } from '@material-ui/core';
 
 
 const App = () => {
-    const [mobileOpen, setMobileOpen] = React.useState(false);
     const [products, setProducts] = useState([]);
+    const [category, setCategory] = useState([]);
     const [cart, setCart] = useState([]);
     const [order, setOrder] = useState({});
     const [errorMessage, setErrorMessage] = useState('');
@@ -17,10 +18,32 @@ const App = () => {
 
         setProducts(data);
     }
-    const fetchCart= async () =>{ 
-        setCart(await commerce.cart.retrieve());
-    }
+    const fetchCategory = async () =>{
+      const {data} = await commerce.categories.list();
+     console.log(data);
+      setCategory(data);
+  }
+/*   const fetchCategoryList =  async (id) => {
+    console.log(id);
+    const data = await commerce.categories.retrieve(id, {
+      type: "permalink",
+    });
+    console.log(data);
+    setCategory(data);
 
+  };  */
+    const fetchCart= async () =>{ 
+        setCart(await commerce.cart.retrieve());    }
+    const fetchProductsDeltail =  async (id) => {
+      console.log(id);
+      const product = await commerce.products.retrieve(id, {
+        type: "permalink",
+      });
+  
+      setProducts(product);
+  
+    }; 
+    
     const handleAddToCart = async(productId, quantity) =>{
         const item = await commerce.cart.add(productId, quantity)
 
@@ -63,15 +86,17 @@ const App = () => {
 
     useEffect(() =>{
         fetchProducts();
+        fetchCategory();
         fetchCart();
     },[]);
-        console.log(cart)
+      
     
     return (
         <Router>
         <div>
-            <Navbar totalItems = {cart.total_items} />
-   
+            <Navbar totalItems = {cart.total_items} category={category} />
+       
+      
             <Switch>
                 <Route exact path="/">
                      <Products products= {products} onAddToCart={handleAddToCart}/> 
@@ -85,8 +110,11 @@ const App = () => {
                 <Route exact path="/checkout">
                      <Checkout cart={cart} order={order} onCaptureCheckout={handleCaptureCheckout} error={errorMessage} /> 
                 </Route>   
+                <Route path="/:id">  <Details  products={products}   onAddToCart={handleAddToCart}  fetchProductsDeltail={fetchProductsDeltail } />    </Route>
             </Switch>
+            <Footer />
         </div>
+      
         </Router>
     );
 };

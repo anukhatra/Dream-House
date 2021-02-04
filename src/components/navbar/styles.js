@@ -10,12 +10,14 @@ export default makeStyles((theme) => ({
       width: `calc(100% - ${drawerWidth}px)`,
       marginLeft: drawerWidth,
     },
+
   },
   title: {
     flexGrow: 1,
     alignItems: 'center',
     display: 'flex',
     textDecoration: 'none',
+    color: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
   },
   image: {
     marginRight: '10px',
@@ -44,8 +46,7 @@ export default makeStyles((theme) => ({
     },
   },
   searchIcon: {
-    padding: theme.spacing(0, 2),
-    height: '100%',
+    padding: theme.spacing(0, 2),  
     position: 'absolute',
     pointerEvents: 'none',
     display: 'flex',
@@ -64,5 +65,6 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       width: '20ch',
     },
+
   },
 }));

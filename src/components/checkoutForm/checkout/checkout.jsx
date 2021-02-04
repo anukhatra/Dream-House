@@ -16,7 +16,7 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     const [shippingData, setShippingData] = useState({});
     const history = useHistory();
     const classes = useStyles();
-    const [isFinished, setIsFinished] = useState(0);
+    const [isFinished, setIsFinished] = useState(false);
     const nextStep = () => setActiveStep((prevActiveStep) => prevActiveStep + 1);
     const backStep = () => setActiveStep((prevActiveStep) => prevActiveStep - 1);
 
@@ -39,11 +39,12 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
       nextStep();
     };
   
-    const timeout =() => {
+    const timeout = () => {
       setTimeout(() =>{
           setIsFinished(true)
-      },3000);
+      },4000);
   }
+    console.log(isFinished);
     
     let Confirmation = () => (order.customer ? (
       <>
@@ -57,7 +58,11 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
       </>
     ) : isFinished ? (
       <>
- 
+      <div>
+        <Typography variant="h5">Thank you for your purchase!</Typography>
+        <Divider className={classes.divider} />
+
+      </div>
         <br />
         <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
       </>
@@ -69,13 +74,13 @@ const Checkout = ({ cart, onCaptureCheckout, order, error }) => {
     ));
 
     if (error) {
-      Confirmation = () => (
+
         <>
           <Typography variant="h5">Error: {error}</Typography>
           <br />
           <Button component={Link} variant="outlined" type="button" to="/">Back to home</Button>
         </>
-      );
+
     }
 
     const Form = () => activeStep === 0? <AddressForm checkoutToken= {checkoutToken} next={next}/> :
